@@ -10,6 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: docker build
+        run: cd front
         run: docker build .
   run-tests:
     runs-on: ubuntu-latest
