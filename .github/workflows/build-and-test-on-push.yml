@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: 16
       - name: Install Dependencies
-        run: yarn install
+        run: |
+          cd front
+          ls
+          yarn install
       - name: Run test
         run: yarn run test
