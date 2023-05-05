@@ -10,7 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: docker build
-        run: docker build .
+        run: |
+          cd front
+          ls
+          docker build .
   run-tests:
     runs-on: ubuntu-latest
     steps:
@@ -21,6 +24,10 @@ jobs:
         with:
           node-version: 16
       - name: Install Dependencies
-        run: yarn install
+        run: |
+          cd front
+          yarn install
       - name: Run test
-        run: yarn run test
+        run: |
+          cd front
+          yarn run test
