@@ -26,7 +26,8 @@ jobs:
       - name: Install Dependencies
         run: |
           cd front
-          ls
           yarn install
       - name: Run test
-        run: yarn run test
+        run: |
+          cd front
+          yarn run test
