@@ -13,6 +13,8 @@ jobs:
         run: ls
       - name: front dir move
         run: cd front
+      - name: ls
+        run: ls
       - name: docker build
         run: docker build .
   run-tests:
