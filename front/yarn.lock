@@ -3367,6 +3367,7 @@ __metadata:
     eslint-config-prettier: "npm:^8.8.0"
     jest: "npm:^29.5.0"
     jest-environment-jsdom: "npm:^29.5.0"
+    modern-css-reset: "npm:^1.4.0"
     next: "npm:13.3.4"
     prettier: "npm:^2.8.8"
     react: "npm:18.2.0"
@@ -5179,6 +5180,13 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 123361119829ab8115234f36ed8ef8f697b0f6f83ec9f9bc8f76da587487976d74bc874ffa892e7a66df607fa8f2cc758eed8db225e9cd3a84846350209e53db
+  languageName: node
+  linkType: hard
+
+"modern-css-reset@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "modern-css-reset@npm:1.4.0"
+  checksum: d174cf353a0db5c42b308be3795645bd597d795e6b1c6c2ad1bc663d2f058cf074d55ab7928fbab1a1657c3c14acee542aa11f8aa897cc3f454e96930840f219
   languageName: node
   linkType: hard
 
