@@ -3,6 +3,7 @@ import { IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import Image from 'next/image'
 import Logo from '../assets/icons/LeanerChainLogo.svg'
+import { Theme } from '@mui/material'
 
 export default function HeaderMain() {
   const HeaderContainer = styled.div`
@@ -10,7 +11,7 @@ export default function HeaderMain() {
     display: flex;
   `
 
-  const HeaderInner = styled.div`
+  const HeaderInner = styled.div<{ theme?: Theme }>`
     margin: auto;
     width: 768px;
     display: flex;
