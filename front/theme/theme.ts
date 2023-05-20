@@ -4,6 +4,7 @@ const theme = createTheme({
   palette: {
     customGrey: {
       main: '#F0F2EE',
+      light: '#F0F0E0',
     },
     customGreen: {
       main: '#128938',
