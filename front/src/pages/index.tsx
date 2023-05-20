@@ -1,7 +1,7 @@
 import HeaderMain from '@/components/layouts/HeaderMain'
 import TopBanner from '@/components/layouts/TopBanner'
 import { BaseBox } from '@/functions/themes/BaseBox'
-import { Top } from '@/components/templates/Top'
+import { Top as TopTemplate } from '@/components/templates/Top'
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <HeaderMain />
       <TopBanner />
       <BaseBox>
-        <Top />
+        <TopTemplate />
       </BaseBox>
     </>
   )
