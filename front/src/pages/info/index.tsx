@@ -1,7 +1,14 @@
+import HeaderMain from '@/components/layouts/HeaderMain'
+import { BaseBox } from '@/functions/themes/BaseBox'
+import { Info as InfoTemplate } from '@/components/templates/Info'
+
 export default function Introduction() {
   return (
     <>
-      <div>IntroductionPage</div>
+      <HeaderMain />
+      <BaseBox>
+        <InfoTemplate />
+      </BaseBox>
     </>
   )
 }

@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { BasicButton } from '../uis/BasicButton'
 import theme from '../../../theme/theme'
 import { Theme } from '@mui/material/styles'
+import Link from 'next/link'
 
 export default function TopBanner() {
   const BannerContainer = styled.div<{ theme?: Theme }>`
@@ -23,6 +24,10 @@ export default function TopBanner() {
     gap: 30px;
   `
 
+  const CustomLink = styled(Link)`
+    flex-grow: 1;
+  `
+
   return (
     <>
       <BannerContainer>
@@ -33,13 +38,24 @@ export default function TopBanner() {
             気軽にもくもく会を開いてみましょう。
           </p>
           <CustomWrapper>
-            <BasicButton
-              text="LearnerChainについて"
-              palette={theme.palette.customGreen}
-              height="50px"
-              className="-shadow"
-            />
-            <BasicButton text="LearnerChainの使い方" palette={theme.palette.customGreen} className="-shadow" />
+            <CustomLink href="/info">
+              <BasicButton
+                text="LearnerChainについて"
+                palette={theme.palette.customGreen}
+                height="50px"
+                width="100%"
+                className="-shadow"
+              />
+            </CustomLink>
+            <CustomLink href="/info/howto">
+              <BasicButton
+                text="LearnerChainの使い方"
+                palette={theme.palette.customGreen}
+                height="50px"
+                width="100%"
+                className="-shadow"
+              />
+            </CustomLink>
           </CustomWrapper>
         </BannerInner>
       </BannerContainer>
