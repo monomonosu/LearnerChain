@@ -10,7 +10,7 @@ const CustomButton = styled(Button)<ButtonStyleProps>`
   background: ${({ palette }) => palette?.main};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  flex-grow: 1;
+  /* flex-grow: 1; */
   &:hover {
     background: ${({ palette }) => palette?.light};
   }
