@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import Image from 'next/image'
-import Logo from '../assets/icons/LeanerChainLogo.svg'
+import Logo from '../../assets/icons/LeanerChainLogo.svg'
 
 export default function HeaderMain() {
   const HeaderContainer = styled.div`
