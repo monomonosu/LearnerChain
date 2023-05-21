@@ -77,9 +77,17 @@ export const SessionCard: React.FC<SessionCardProps> = ({
       <CustomHr />
       <CustomCardContent>{title ? title : 'タイトルなし'}</CustomCardContent>
       <CustomCardContent className="-bg-white">
-        {tags?.map((tag, i) => (
-          <BasicChip key={i} className="-text-white" text={tag} palette={Passion[passionLevel]} />
-        ))}
+        {tags ? (
+          tags?.map((tag, i) =>
+            tag ? (
+              <BasicChip key={i} className="-text-white" text={tag} palette={Passion[passionLevel]} />
+            ) : (
+              <BasicChip key={i} className="-text-white" text="タグなし" palette={Passion[passionLevel]} />
+            )
+          )
+        ) : (
+          <BasicChip className="-text-white" text="タグなし" palette={Passion[passionLevel]} />
+        )}
       </CustomCardContent>
       <CustomCardContent className="-small">{content ? content : 'コメントなし'}</CustomCardContent>
     </CustomCard>
