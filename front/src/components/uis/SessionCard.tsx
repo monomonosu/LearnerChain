@@ -16,6 +16,10 @@ const CustomCardHeader = styled(CardHeader)`
 
 const CustomCardContent = styled(CardContent)`
   padding: 8px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  gap: 10px;
   &.-small {
     font-size: 12px;
   }
@@ -80,13 +84,13 @@ export const SessionCard: React.FC<SessionCardProps> = ({
         {tags ? (
           tags?.map((tag, i) =>
             tag ? (
-              <BasicChip key={i} className="-text-white" text={tag} palette={Passion[passionLevel]} />
+              <BasicChip key={i} className="-text-white" text={tag} size="small" palette={Passion[passionLevel]} />
             ) : (
-              <BasicChip key={i} className="-text-white" text="タグなし" palette={Passion[passionLevel]} />
+              <BasicChip key={i} className="-text-white" text="タグなし" size="small" palette={Passion[passionLevel]} />
             )
           )
         ) : (
-          <BasicChip className="-text-white" text="タグなし" palette={Passion[passionLevel]} />
+          <BasicChip className="-text-white" text="タグなし" size="small" palette={Passion[passionLevel]} />
         )}
       </CustomCardContent>
       <CustomCardContent className="-small">{content ? content : 'コメントなし'}</CustomCardContent>

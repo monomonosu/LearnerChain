@@ -23,14 +23,16 @@ type ChipStyleProps = {
 
 type ChipProps = {
   text: string
+  size?: 'small' | 'medium'
   palette?: PaletteLevel
   className?: string
 }
 
 export const BasicChip: React.FC<ChipProps> = ({
   text,
+  size = 'medium',
   palette = theme.palette.customGrey,
   className = '-text-black',
 }) => {
-  return <CustomClip label={text} palette={palette} clickable className={className} />
+  return <CustomClip label={text} size={size} palette={palette} clickable className={className} />
 }
