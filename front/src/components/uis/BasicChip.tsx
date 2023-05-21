@@ -24,6 +24,10 @@ type ChipProps = {
   className?: string
 }
 
-export const BasicChip: React.FC<ChipProps> = ({ text, palette = theme.palette.customGrey, className='-text-black' }) => {
+export const BasicChip: React.FC<ChipProps> = ({
+  text,
+  palette = theme.palette.customGrey,
+  className = '-text-black',
+}) => {
   return <CustomClip label={text} palette={palette} clickable className={className} />
 }
