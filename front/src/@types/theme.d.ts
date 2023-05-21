@@ -10,6 +10,8 @@ declare module '@mui/material' {
   interface PaletteOptions {
     customGrey: PaletteLevel
     customGreen: PaletteLevel
+    customBlue: PaletteLevel
+    customRed: PaletteLevel
   }
 
   // グラデーションを追加する際はここに追加

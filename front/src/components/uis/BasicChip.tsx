@@ -7,10 +7,13 @@ const CustomClip = styled(Chip)<ChipStyleProps>`
   color: white;
   border-radius: 0px;
   &:hover {
-    background: ${({ palette }) => palette?.light};
+    background: ${({ palette }) => palette?.main};
   }
   &.-text-black {
     color: black;
+  }
+  &.-text-white {
+    color: white;
   }
 `
 
@@ -20,10 +23,16 @@ type ChipStyleProps = {
 
 type ChipProps = {
   text: string
+  size?: 'small' | 'medium'
   palette?: PaletteLevel
   className?: string
 }
 
-export const BasicChip: React.FC<ChipProps> = ({ text, palette = theme.palette.customGrey, className='-text-black' }) => {
-  return <CustomClip label={text} palette={palette} clickable className={className} />
+export const BasicChip: React.FC<ChipProps> = ({
+  text,
+  size = 'medium',
+  palette = theme.palette.customGrey,
+  className = '-text-black',
+}) => {
+  return <CustomClip label={text} size={size} palette={palette} clickable className={className} />
 }
