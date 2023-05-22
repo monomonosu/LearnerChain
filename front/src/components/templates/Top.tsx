@@ -4,6 +4,7 @@ import { BasicButton } from '../uis/BasicButton'
 import { SessionCard } from '../uis/SessionCard'
 import tagIndex from '../../functions/constants/common/tagIndex.json'
 import sessionContent from '../../functions/constants/common/sessionContent.json'
+import Link from 'next/link'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -39,7 +40,9 @@ export const Top = () => {
         ))}
       </TagContainer>
       <ControlContainer>
-        <BasicButton text="セッションを募集する" height="50px" width="100%" className="-shadow" />
+        <Link href="/session/create">
+          <BasicButton text="セッションを募集する" height="50px" width="100%" className="-shadow" />
+        </Link>
       </ControlContainer>
       <CardContainer>
         {sessionContent.map((content, i) => (

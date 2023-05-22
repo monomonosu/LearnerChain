@@ -28,9 +28,11 @@ export default function HeaderMain() {
             <Image src={Logo} width={100} height={50} alt="logo" />
           </Link>
           <div>
-            <IconButton>
-              <PostAddIcon fontSize="large" />
-            </IconButton>
+            <Link href="/session/create">
+              <IconButton>
+                <PostAddIcon fontSize="large" />
+              </IconButton>
+            </Link>
             <IconButton>
               <SearchIcon fontSize="large" />
             </IconButton>
