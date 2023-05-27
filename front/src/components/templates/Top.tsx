@@ -6,12 +6,6 @@ import tagIndex from '../../functions/constants/common/tagIndex.json'
 import sessionContent from '../../functions/constants/common/sessionContent.json'
 import Link from 'next/link'
 
-const CustomContainer = styled.div`
-  padding: 30px 0;
-  display: grid;
-  row-gap: 30px;
-`
-
 const TagContainer = styled.div`
   gap: 20px;
   display: flex;
@@ -32,7 +26,7 @@ const CardContainer = styled.div`
 
 export const Top = () => {
   return (
-    <CustomContainer>
+    <>
       <TagContainer>
         {/* TODO：繋ぎ込み後書き換え */}
         {tagIndex.map((tag, i) => (
@@ -57,6 +51,6 @@ export const Top = () => {
           ></SessionCard>
         ))}
       </CardContainer>
-    </CustomContainer>
+    </>
   )
 }
