@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { BasicInput } from '../uis/BasicInput'
 import { BasicTextField } from '../uis/BasicTextField'
+import { BasicButton } from '../uis/BasicButton'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -23,6 +24,7 @@ export const SessionCreate = () => {
         {/* TODO：ラジオボタンに切り替え */}
         <BasicInput label="ガチ度" name="passion" placeholder="ほげほげ" width="50%" />
         <BasicTextField label="コメント" name="comment" placeholder="コメント" width="100%" />
+        <BasicButton text='セッションを募集する' height='50px' />
       </CustomContainer>
     </>
   )
