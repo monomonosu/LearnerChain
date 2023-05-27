@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { BasicInput } from '../uis/BasicInput'
+import { BasicTextField } from '../uis/BasicTextField'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -21,7 +22,7 @@ export const SessionCreate = () => {
         <BasicInput label="URL" name="url" placeholder="ほげほげ" width="50%" />
         {/* TODO：ラジオボタンに切り替え */}
         <BasicInput label="ガチ度" name="passion" placeholder="ほげほげ" width="50%" />
-        <BasicInput label="コメント" name="comment" placeholder="ほげほげ" width="50%" />
+        <BasicTextField label="コメント" name="comment" placeholder="コメント" width="100%" />
       </CustomContainer>
     </>
   )
