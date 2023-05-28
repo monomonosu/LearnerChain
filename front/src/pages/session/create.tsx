@@ -3,7 +3,7 @@ import { BasicTitle } from '@/components/uis/BasicTitle'
 import { BaseBox } from '@/functions/themes/BaseBox'
 import { SessionCreate as SessionCreateTemplate } from '@/components/templates/SessionCreate'
 
-export default function Introduction() {
+export default function Create() {
   return (
     <>
       <HeaderMain />

@@ -24,7 +24,7 @@ export const SessionCreate = () => {
         {/* TODO：ラジオボタンに切り替え */}
         <BasicInput label="ガチ度" name="passion" placeholder="ほげほげ" width="50%" />
         <BasicTextField label="コメント" name="comment" placeholder="コメント" width="100%" />
-        <BasicButton text='セッションを募集する' height='50px' />
+        <BasicButton text="セッションを募集する" height="50px" />
       </CustomContainer>
     </>
   )
