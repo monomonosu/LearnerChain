@@ -2,9 +2,8 @@ import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import { PaletteLevel } from '@mui/material'
 import sessionContents from '../../functions/constants/common/sessionContent.json'
-import theme from '../../../theme/theme'
 import { BasicChip } from '../uis/BasicChip'
-import { PLATFORM, PASSION } from '../../functions/constants/common/sessionInfo'
+import { PLATFORM, PASSION_COLOR, PASSION_WORD } from '../../functions/constants/common/sessionInfo'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -54,16 +53,6 @@ type SessionSectionStyleProps = {
   palette?: PaletteLevel
 }
 
-interface PassionInterFace {
-  [key: number]: PaletteLevel
-}
-
-const Passion: PassionInterFace = {
-  1: theme.palette.customBlue,
-  2: theme.palette.customGreen,
-  3: theme.palette.customRed,
-}
-
 export const SessionShow = () => {
   const router = useRouter()
   const { sessionId } = router.query
@@ -73,18 +62,18 @@ export const SessionShow = () => {
 
   return (
     <CustomContainer>
-      <SessionTitle palette={Passion[sessionContent?.passionLevel!]}>
+      <SessionTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>
         {sessionContent?.title ? sessionContent.title : 'タイトルなし'}
       </SessionTitle>
       <ContentContainer>
         <ContentWrapper>
-          <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>ユーザー名</ContentTitle>
+          <ContentTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>ユーザー名</ContentTitle>
           <Content>
             <p>{sessionContent?.userName ? sessionContent.userName : '名無しのユーザーさん'}</p>
           </Content>
         </ContentWrapper>
         <ContentWrapper>
-          <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>タグ</ContentTitle>
+          <ContentTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>タグ</ContentTitle>
           <Content>
             {sessionContent?.tags?.map((tag, index) =>
               tag ? <BasicChip key={index} text={tag} /> : <BasicChip key={index} text="タグなし" />
@@ -92,27 +81,25 @@ export const SessionShow = () => {
           </Content>
         </ContentWrapper>
         <ContentWrapper>
-          <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>プラットフォーム</ContentTitle>
+          <ContentTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>プラットフォーム</ContentTitle>
           <Content>
-            {/* TODO:Enum作成 */}
-            <p>{sessionContent?.platform}</p>
+            <p>{PLATFORM[sessionContent?.platform!]}</p>
           </Content>
         </ContentWrapper>
         <ContentWrapper>
-          <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>URL（仮）</ContentTitle>
+          <ContentTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>URL（仮）</ContentTitle>
           <Content>
             <p>{sessionContent?.platform_content}</p>
           </Content>
         </ContentWrapper>
         <ContentWrapper>
-          <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>ガチ度</ContentTitle>
+          <ContentTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>ガチ度</ContentTitle>
           <Content>
-            {/* TODO:Enum作成 */}
-            <p>{sessionContent?.passionLevel}</p>
+            <p>{PASSION_WORD[sessionContent?.passionLevel!]}</p>
           </Content>
         </ContentWrapper>
         <ContentWrapper className="-full-width">
-          <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>コメント</ContentTitle>
+          <ContentTitle palette={PASSION_COLOR[sessionContent?.passionLevel!]}>コメント</ContentTitle>
           <Content>
             <p>{sessionContent?.content ? sessionContent.content : 'コメントなし'}</p>
           </Content>
