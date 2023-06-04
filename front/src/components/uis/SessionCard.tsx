@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Card, CardHeader, Avatar, CardContent, PaletteLevel } from '@mui/material'
 import { BasicChip } from './BasicChip'
 import theme from '../../../theme/theme'
+import { PASSION_COLOR } from '@/functions/constants/common/sessionInfo'
 
 const CustomCard = styled(Card)<SessionCardStyleProps>`
   width: ${({ width }) => width};
@@ -38,15 +39,15 @@ type SessionCardStyleProps = {
   palette?: PaletteLevel
 }
 
-interface PassionInterFace {
-  [key: number]: PaletteLevel
-}
+// interface PassionInterFace {
+//   [key: number]: PaletteLevel
+// }
 
-const Passion: PassionInterFace = {
-  1: theme.palette.customBlue,
-  2: theme.palette.customGreen,
-  3: theme.palette.customRed,
-}
+// const Passion: PassionInterFace = {
+//   1: theme.palette.customBlue,
+//   2: theme.palette.customGreen,
+//   3: theme.palette.customRed,
+// }
 
 type SessionCardProps = {
   userName?: string | null
@@ -72,7 +73,7 @@ export const SessionCard: React.FC<SessionCardProps> = ({
   // TODO：日付フォーマットの実装
   const convertDate = String(created_at)
   return (
-    <CustomCard width={width} palette={Passion[passionLevel]}>
+    <CustomCard width={width} palette={PASSION_COLOR[passionLevel]}>
       <CustomCardHeader
         //   TODO：アップロードした画像との繋ぎ込み
         avatar={<Avatar aria-label="recipe">{avatarChar}</Avatar>}
@@ -84,13 +85,25 @@ export const SessionCard: React.FC<SessionCardProps> = ({
         {tags ? (
           tags?.map((tag, i) =>
             tag ? (
-              <BasicChip key={i} className="-text-white" text={tag} size="small" palette={Passion[passionLevel]} />
+              <BasicChip
+                key={i}
+                className="-text-white"
+                text={tag}
+                size="small"
+                palette={PASSION_COLOR[passionLevel]}
+              />
             ) : (
-              <BasicChip key={i} className="-text-white" text="タグなし" size="small" palette={Passion[passionLevel]} />
+              <BasicChip
+                key={i}
+                className="-text-white"
+                text="タグなし"
+                size="small"
+                palette={PASSION_COLOR[passionLevel]}
+              />
             )
           )
         ) : (
-          <BasicChip className="-text-white" text="タグなし" size="small" palette={Passion[passionLevel]} />
+          <BasicChip className="-text-white" text="タグなし" size="small" palette={PASSION_COLOR[passionLevel]} />
         )}
       </CustomCardContent>
       <CustomCardContent className="-small">{content ? content : 'コメントなし'}</CustomCardContent>
