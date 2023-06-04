@@ -1,49 +1,67 @@
 [
   {
+    "id": 1,
     "userName": null,
     "title": null,
     "created_at": "2022-01-01T01:41:28.000000Z",
     "tags": null,
+    "platform": 0,
+    "platform_content": "https://example.com",
     "content": null,
     "passionLevel": 1
   },
   {
+    "id": 2,
     "userName": "山田　太郎",
     "title": "もくもく会しましょう",
     "created_at": "2022-01-01T01:41:28.000000Z",
     "tags": ["もくもく会"],
+    "platform": 1,
+    "platform_content": "live:example",
     "content": "ジャンルはなんでもOKです。もくもく会に参加できる方募集中",
     "passionLevel": 2
   },
   {
+    "id": 3,
     "userName": "山田　花子",
     "title": "Typescript勉強会",
     "created_at": "2022-01-01T01:41:28.000000Z",
     "tags": ["Typescript", "勉強会"],
+    "platform": 2,
+    "platform_content": "SLACK100000",
     "content": "Typescriptについて勉強しましょう。",
     "passionLevel": 3
   },
   {
+    "id": 4,
     "userName": "",
     "title": "",
     "created_at": "2022-01-01T01:41:28.000000Z",
     "tags": [""],
+    "platform": 0,
+    "platform_content": "https://example.com",
     "content": "",
     "passionLevel": 1
   },
   {
+    "id": 5,
     "userName": "栃木太郎",
     "title": "Next.jsについて学ぼう",
     "created_at": "2022-01-01T01:41:28.000000Z",
     "tags": ["Next.js", "勉強会"],
+    "platform": 1,
+    "platform_content": "live:example",
     "content": "Next.js何もわからん人向け",
     "passionLevel": 2
   },
   {
+    "id": 6,
     "userName": "名無し",
     "title": "Laravel初心者さんいらっしゃい",
     "created_at": "2022-01-01T01:41:28.000000Z",
     "tags": ["Laravel", "初心者", "ハンズオン"],
+    "platform": 2,
+    "platform_content": "SLACK100000",
     "content": "Laravel初心者さんいらっしゃい。ゆっくりしていってね",
     "passionLevel": 3
   }
