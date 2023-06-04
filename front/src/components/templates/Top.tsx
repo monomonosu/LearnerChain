@@ -5,6 +5,7 @@ import { SessionCard } from '../uis/SessionCard'
 import tagIndex from '../../functions/constants/common/tagIndex.json'
 import sessionContent from '../../functions/constants/common/sessionContent.json'
 import Link from 'next/link'
+import { BasicLink } from '../uis/BasicLink'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -46,16 +47,17 @@ export const Top = () => {
           </Link>
         </ControlContainer>
         <CardContainer>
-          {sessionContent.map((content, i) => (
-            <SessionCard
-              key={i}
-              userName={content.userName}
-              created_at={content.created_at}
-              tags={content.tags}
-              title={content.title}
-              content={content.content}
-              passionLevel={content.passionLevel}
-            ></SessionCard>
+          {sessionContent.map((content) => (
+            <BasicLink href={`/session/${content.id}`} key={content.id}>
+              <SessionCard
+                userName={content.userName}
+                created_at={content.created_at}
+                tags={content.tags}
+                title={content.title}
+                content={content.content}
+                passionLevel={content.passionLevel}
+              ></SessionCard>
+            </BasicLink>
           ))}
         </CardContainer>
       </CustomContainer>
