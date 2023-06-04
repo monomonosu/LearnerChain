@@ -4,6 +4,7 @@ import { PaletteLevel } from '@mui/material'
 import sessionContents from '../../functions/constants/common/sessionContent.json'
 import theme from '../../../theme/theme'
 import { BasicChip } from '../uis/BasicChip'
+import { PLATFORM, PASSION } from '../../functions/constants/common/sessionInfo'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -73,21 +74,21 @@ export const SessionShow = () => {
   return (
     <CustomContainer>
       <SessionTitle palette={Passion[sessionContent?.passionLevel!]}>
-        {sessionContent?.title ?? 'タイトルなし'}
+        {sessionContent?.title ? sessionContent.title : 'タイトルなし'}
       </SessionTitle>
       <ContentContainer>
         <ContentWrapper>
           <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>ユーザー名</ContentTitle>
           <Content>
-            <p>{sessionContent?.userName ?? '名無しのユーザーさん'}</p>
+            <p>{sessionContent?.userName ? sessionContent.userName : '名無しのユーザーさん'}</p>
           </Content>
         </ContentWrapper>
         <ContentWrapper>
           <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>タグ</ContentTitle>
           <Content>
-            {sessionContent?.tags?.map((tag, index) => <BasicChip key={index} text={tag} />) ?? (
-              <BasicChip text="タグなし" />
-            )}
+            {sessionContent?.tags?.map((tag, index) =>
+              tag ? <BasicChip key={index} text={tag} /> : <BasicChip key={index} text="タグなし" />
+            ) ?? <BasicChip text="タグなし" />}
           </Content>
         </ContentWrapper>
         <ContentWrapper>
@@ -113,7 +114,7 @@ export const SessionShow = () => {
         <ContentWrapper className="-full-width">
           <ContentTitle palette={Passion[sessionContent?.passionLevel!]}>コメント</ContentTitle>
           <Content>
-            <p>{sessionContent?.content ?? 'コメントなし'}</p>
+            <p>{sessionContent?.content ? sessionContent.content : 'コメントなし'}</p>
           </Content>
         </ContentWrapper>
       </ContentContainer>
