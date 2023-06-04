@@ -3,7 +3,10 @@ import styled from '@emotion/styled'
 import { PaletteLevel } from '@mui/material'
 import sessionContents from '../../functions/constants/common/sessionContent.json'
 import { BasicChip } from '../uis/BasicChip'
+import { BasicButton } from '../uis/BasicButton'
+import { BasicLink } from '../uis/BasicLink'
 import { PLATFORM, PASSION_COLOR, PASSION_WORD } from '../../functions/constants/common/sessionInfo'
+import theme from '../../../theme/theme'
 
 const CustomContainer = styled.div`
   padding: 30px 0;
@@ -105,7 +108,15 @@ export const SessionShow = () => {
           </Content>
         </ContentWrapper>
       </ContentContainer>
-      {/* TODO:一覧に戻るボタン作成？ */}
+      <BasicLink href="/">
+        <BasicButton
+          text="セッション一覧に戻る"
+          palette={theme.palette.customGrey}
+          className="-shadow -text-black"
+          height="50px"
+          width="100%"
+        ></BasicButton>
+      </BasicLink>
     </CustomContainer>
   )
 }
