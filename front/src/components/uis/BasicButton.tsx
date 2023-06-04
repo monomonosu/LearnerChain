@@ -17,6 +17,9 @@ const CustomButton = styled(Button)<ButtonStyleProps>`
   &.-shadow {
     box-shadow: 4px 4px 4px rgb(0, 0, 0, 0.25);
   }
+  &.-text-black {
+    color: #333333;
+  }
 `
 
 type ButtonStyleProps = {
