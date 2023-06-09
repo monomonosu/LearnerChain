@@ -7,7 +7,7 @@ const CustomClip = styled(Chip)<ChipStyleProps>`
   color: white;
   border-radius: 0px;
   &:hover {
-    background: ${({ palette }) => palette?.main};
+    background: ${({ palette }) => palette?.light};
   }
   &.-text-black {
     color: black;
